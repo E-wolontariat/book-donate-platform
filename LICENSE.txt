@@ -1,2 +1,0 @@
-License for the code is in the LICENSE.code.txt file.
-License for the media is in the LICENSE.media.txt file.
