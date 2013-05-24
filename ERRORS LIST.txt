@@ -1,0 +1,5 @@
+1 - błąd łączenia z bazą danych (mysql_connect);
+2 - błąd wybierania bazy danych (mysql_select_db);
+3 - błąd wczytywania pliku z szablonami;
+4 - błędne id funkcji
+5 - niepoprawna rejestracja szablonu

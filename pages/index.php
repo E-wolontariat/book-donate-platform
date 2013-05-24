@@ -1,0 +1,1 @@
+Text from extra var:<{getMessage}>
