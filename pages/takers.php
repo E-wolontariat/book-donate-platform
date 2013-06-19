@@ -1,0 +1,2 @@
+<{takersMap}></br>
+<{takersList}>

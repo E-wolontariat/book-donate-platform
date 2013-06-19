@@ -1,0 +1,3 @@
+Pliki z tego katalogu s¹ automatycznie u¿ywane jako t³a dla captcha. Wszystkie pliki musz¹ mieæ rozszerzenie .jpg
+Obrazek z kodem bêdzie mia³ takie wymiary jak t³o.
+Zaleca siê identyczne wymiary dla wszystkich plików.

@@ -12,7 +12,12 @@ class Templates{
 	var $templates_functions_function = array();
 	var $templates_functions_locations = array();
 	var $templates_functions_values = array();
+	var $webstireURL = "localhost:8080/new";
 	
+	
+	function __construct($webstireURL ){
+		$this->webstireURL = $webstireURL;
+	}
 	
 	function parsePrimaryTemplates(&$page, $pageFile){
 		$error=0;
@@ -46,12 +51,7 @@ class Templates{
 			array_push($this->templates_functions_names, $name);
 			array_push($this->templates_functions_function, $value);	
 			array_push($this->templates_functions_locations, $location);
-			array_push($this->templates_functions_values, $function_value);	
-			/*if(!is_null($function_value))
-				array_push($this->templates_functions_values, $function_value);	
-			else
-				array_push($this->templates_functions_values, NULL);	
-			*/
+			array_push($this->templates_functions_values, $function_value);
 		}
 		else
 			$error = 5;
@@ -70,15 +70,16 @@ class Templates{
 			$i++;
 		}
 		$i=0;
+		while($i < count($this->templates_files_names)){
+			$page = str_replace ( "<{".$this->templates_files_names[$i]."}>" , @file_get_contents('http://'.$this->webstireURL.'/'.$this->templatesDir.$this->templates_files_values[$i].'.php') , $page);
+			$i++;
+		}
+		$i=0;
 		while($i < count($this->templates_var_names)){
 			$page = str_replace( "<{".$this->templates_var_names[$i]."}>" , $this->templates_var_values[$i] , $page);
 			$i++;
 		}
-		$i=0;
-		while($i < count($this->templates_files_names)){
-			$page = str_replace ( "<{".$this->templates_files_names[$i]."}>" , @file_get_contents($this->this->templatesDir.$this->templates_files_values[$i].'.php') , $page);
-			$i++;
-		}		
+		$page = preg_replace('#<\{[a-zA-Z0-9]+\}>#','',$page);
 	}
 }
 ?>

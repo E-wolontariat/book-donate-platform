@@ -30,7 +30,7 @@ class Db{
 		$t = mysql_fetch_array($this->DbQuery);
 		return $t;
 	}
-	function dbSelect($table, $select=NULL, $where=NULL, $sort=NULL, $sortCol=NULL){
+	function dbSelect($table, $select=NULL, $where=NULL, $sort=NULL, $sortCol=NULL, $limit=NULL){
 		if(is_null($select))
 			$select="*";
 		$query="SELECT ".$select." FROM ".$this->DbPrefix.$table;
@@ -38,6 +38,8 @@ class Db{
 			$query .= " WHERE ".$where;
 		if(!(is_null($sort) || is_null($sortCol)))
 			$query .= " ORDER BY ".$sortCol." ".$sort;
+		if(!is_null($limit))
+			$query .= " LIMIT ".$limit;
 		$this->DbQuery = mysql_query($query);
 	}
 	function dbSelectID($table, $select=NULL, $id){
@@ -76,6 +78,11 @@ class Db{
 	function dbNumRows(){
 		$t = mysql_num_rows($this->DbQuery);
 		return $t;
+	}
+	function clearText($text){
+		//TODO
+		//filtr text from dangerous strings (sql injection, etc)
+		return $text;
 	}
 }
 ?>

@@ -1,0 +1,2 @@
+<{donorsMap}></br>
+<{donorsList}>

@@ -1,0 +1,1 @@
+Pliki z tego katalogu s¹ automatycznie u¿ywane jako czcionki dla captcha. Wszystkie pliki musz¹ mieæ rozszerzenie .ttf

@@ -1,1 +1,3 @@
-Text from extra var:<{getMessage}>
+<{getMessage}></br></br>
+<{fullMap}>
+</br></br><{news}><br/>

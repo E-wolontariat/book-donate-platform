@@ -5,6 +5,7 @@
 	</div>
 	<div id="content">
 		<div id="page">
+			<{actionMessage}>
 			<{PAGE}>
 		</div>
 		<div id="sidebar">
