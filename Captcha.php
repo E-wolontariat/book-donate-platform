@@ -74,9 +74,12 @@ class Captcha{
 		imagejpeg($this->cap_img);
 	}
 	function getIp(){
-		if(isset($_SERVER['HTTP_CLIENT_IP'])) return $_SERVER['HTTP_CLIENT_IP'];
-		else if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) return $_SERVER['HTTP_X_FORWARDED_FOR'];
-		else return $_SERVER['REMOTE_ADDR'];
+		if(isset($_SERVER['HTTP_CLIENT_IP']))
+			return $_SERVER['HTTP_CLIENT_IP'];
+		else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+			return $_SERVER['HTTP_X_FORWARDED_FOR'];
+		else
+			return $_SERVER['REMOTE_ADDR'];
 	}
 	function addToDB($captcha_code){
 		$chars = 'abcdefghijklmnoprstuwxyz1234567890';

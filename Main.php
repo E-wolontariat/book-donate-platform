@@ -57,8 +57,8 @@ class Main{
 		echo $this->page;
 	}
 	function addTemplates(){
-		$error = 0;
 		$tmp = "";
+		$error = 0;
 		if(isset($_GET['message']))$tmp = $_GET['message'];
 		$error = $this->templates->add(1,"getMessage",$tmp);
 		$error = $this->templates->add(1,"websiteURL",$this->websiteURL);

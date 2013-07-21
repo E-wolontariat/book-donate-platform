@@ -81,7 +81,7 @@ class Db{
 	}
 	function clearText($text){
 		//TODO
-		//filtr text from dangerous strings (sql injection, etc)
+		//db protection (sql injection, etc)
 		return $text;
 	}
 }

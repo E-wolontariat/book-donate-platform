@@ -2,7 +2,7 @@
 session_start();
 require("config.php");
 require("Db.php");
-if(isset($_GET['captcha']) && $_GET['captcha']=="image"){
+if(isset($_GET['captcha']) && $_GET['captcha'] == "image"){
 	require("Captcha.php");
 	$captcha = new Captcha(WebsiteURL, DbHost, DbUser, DbPass, DbName, DbPrefix, DisplayErrors, CaptchaBackgrounds, CaptchaFonts, CaptchaChars, CaptchaMinCharsCount, CaptchaMaxCharsCount, CaptchaDebug);
 	$captcha->getImage();
@@ -19,7 +19,7 @@ else{
 
 	$main = new Main(WebsiteURL, DbHost, DbUser, DbPass, DbName, DbPrefix, DisplayErrors, MapKey, MapSensor);
 	$pid = 1;
-	if(isset($_GET['pid']) && (int)$_GET['pid'] > 0) $pid = $_GET['pid'];
+	if(isset($_GET['pid']) && (int)$_GET['pid'] > 0) $pid = (int)$_GET['pid'];
 	$main->getPage($pid);
 }
 ?>
